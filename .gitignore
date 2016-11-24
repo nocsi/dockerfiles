@@ -1,0 +1,12 @@
+.vagrant/
+.idea
+*.swp
+*.rpm
+*.tar.gz
+*.jar
+*.pub
+*.tfvars
+feh
+swagger.json
+some.json
+rootfs.tar

@@ -1,0 +1,26 @@
+stages:
+  - build
+  - test
+  - release
+
+variables:
+  CONTAINER_TEST_IMAGE: $CI_REGISTRY:$CI_BUILD_REF_NAME
+  CONTAINER_RELEASE_IMAGE: $CI_REGISTRY:latest
+
+build:
+  stage: build
+  script:
+    - make check.env
+    - make build
+
+test:
+  stage: test
+  script:
+    - echo "test"
+
+release-image:
+  stage: release
+  script:
+    - make release
+  only:
+    - master
